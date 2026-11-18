@@ -15,11 +15,39 @@
 *{box-sizing:border-box} 
 body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,Segoe UI,Roboto,Arial,sans-serif}
 .app{display:flex;min-height:100vh}
-.sidebar{width:260px;background:linear-gradient(180deg,#10233f 0%,#17385f 100%);color:white;padding:24px 18px;position:fixed;inset:0 auto 0 0;overflow:auto;z-index:20}
 
-/* LOGO CORPORATIVO EN SIDEBAR */
-.brand{display:flex;align-items:center;justify-content:center;margin-bottom:28px}
-.brand img.logo-corp{max-width:190px;height:auto;display:block;margin:0 auto}
+/* SIDEBAR MODIFICADO CON FOOTER INFERIOR Y BOTONES BAJADOS */
+.sidebar{
+  width:260px;
+  background:linear-gradient(180deg,#10233f 0%,#17385f 100%);
+  color:white;
+  padding:40px 18px 20px 18px;
+  position:fixed;
+  inset:0 auto 0 0;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  overflow:auto;
+  z-index:20;
+}
+
+.sidebar-nav{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 20px;
+}
+
+/* FOOTER DENTRO DEL SIDEBAR */
+.sidebar-footer {
+  font-size: 11px;
+  color: #94a3b8;
+  text-align: center;
+  padding: 12px 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
 
 /* BOTONES LATERALES */
 .navbtn{
@@ -32,7 +60,6 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,Segoe UI,R
   color:#cfdded;
   padding:14px 14px;
   border-radius:12px;
-  margin:6px 0;
   text-align:left;
   cursor:pointer;
   font-weight:700;
@@ -519,16 +546,20 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,Segoe UI,R
 
 <div class="app">
 <aside class="sidebar">
-  <div class="brand">
-    <img src="https://mpw-pwt.github.io/Ejecuciones/Manpower%20Group.png" alt="ManpowerGroup Logo" class="logo-corp" id="corpLogo"/>
+  <!-- LOGO ELIMINADO Y BOTONES AGRUPADOS -->
+  <div class="sidebar-nav">
+    <button class="navbtn active" data-exec="Surtido"><span>📦</span><span>Surtido</span></button>
+    <button class="navbtn" data-exec="Exhibición adicional"><span>🖼️</span><span>Exhibición adicional</span></button>
+    <button class="navbtn" data-exec="Exhibición paga / convenio"><span>🤝</span><span>Exhibición paga / convenio</span></button>
+    <button class="navbtn" data-exec="POP"><span>🚩</span><span>POP</span></button>
+    <button class="navbtn" data-exec="Impulso"><span>🚀</span><span>Impulso</span></button>
+    <button class="navbtn" data-exec="Descuentos"><span>🏷️</span><span>Descuentos</span></button>
   </div>
   
-  <button class="navbtn active" data-exec="Surtido"><span>📦</span><span>Surtido</span></button>
-  <button class="navbtn" data-exec="Exhibición adicional"><span>🖼️</span><span>Exhibición adicional</span></button>
-  <button class="navbtn" data-exec="Exhibición paga / convenio"><span>🤝</span><span>Exhibición paga / convenio</span></button>
-  <button class="navbtn" data-exec="POP"><span>🚩</span><span>POP</span></button>
-  <button class="navbtn" data-exec="Impulso"><span>🚀</span><span>Impulso</span></button>
-  <button class="navbtn" data-exec="Descuentos"><span>🏷️</span><span>Descuentos</span></button>
+  <!-- FOOTER TRASLADADO AL FINAL DEL SIDEBAR -->
+  <div class="sidebar-footer">
+    Creado por: Ing. Henry Martinez
+  </div>
 </aside>
 
 <main class="main">
